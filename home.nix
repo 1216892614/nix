@@ -4,6 +4,11 @@
   home.username = "myuser";
   home.homeDirectory = "/home/myuser";
 
+  home.file.".config/ibus/rime" = {
+    source = ./rime;
+    target = ".config/ibus/rime";
+  };
+
   programs.home-manager.enable = true;
 
   programs.nushell = {
