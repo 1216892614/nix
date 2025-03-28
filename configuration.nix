@@ -12,7 +12,7 @@
   environment.systemPackages = with pkgs; [
     nushell starship yazi helix kitty
     fontconfig nerdfonts sarasa-gothic
-    ibus rime git
+    ibus rime git zellij
   ];
 
   i18n.defaultLocale = "zh_CN.UTF-8";

@@ -11,11 +11,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.nushell = {
-    enable = true;
-    configFile.text = "source ~/.config/nushell/config.nu";
-  };
-
   programs.starship = {
     enable = true;
     settings = { add_newline = false; };
@@ -26,6 +21,7 @@
 
   imports = [
     ./modules/kitty.nix
+    ./modules/nushell.nix
   ];
 
   home.stateVersion = "23.11";
