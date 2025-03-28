@@ -7,14 +7,22 @@
   services.xserver.windowManager.i3.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
 
-  i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = [ pkgs.fcitx5-rime ];
   environment.variables = { GTK_IM_MODULE = "fcitx"; QT_IM_MODULE = "fcitx"; XMODIFIERS = "@im=fcitx"; };
 
   environment.systemPackages = with pkgs; [
     nushell starship yazi helix kitty
     fontconfig nerdfonts sarasa-gothic
+    ibus rime git
   ];
+
+  i18n.inputMethod = {
+    enabled = true;
+    type = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      libpinyin
+      rime
+    ];
+  };
 
   fonts.packages = with pkgs; [ nerdfonts sarasa-gothic ];
 
