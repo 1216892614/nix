@@ -15,6 +15,7 @@
     ibus rime git
   ];
 
+  i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.inputMethod = {
     enabled = true;
     type = "ibus";
@@ -24,7 +25,39 @@
     ];
   };
 
-  fonts.packages = with pkgs; [ nerdfonts sarasa-gothic ];
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      sarasa-gothic
+      source-code-pro
+      hack-font
+      jetbrains-mono
+      nerdfonts
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" ];
+        monospace = [
+          "Sarasa Mono SC"
+          "Noto Sans Mono CJK SC"
+          "DejaVu Sans Mono"
+        ];
+        sansSerif = [
+          "Noto Sans CJK SC"
+          "Source Han Sans SC"
+          "DejaVu Sans"
+        ];
+        serif = [
+          "Noto Serif CJK SC"
+          "Source Han Serif SC"
+          "DejaVu Serif"
+        ];
+      };
+    };
+  };
 
   users.users.myuser = {
     isNormalUser = true;
