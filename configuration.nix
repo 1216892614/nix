@@ -113,7 +113,7 @@
     fish yazi helix kitty fzf
     fontconfig sarasa-gothic catppuccin
     ibus git zellij i3 feh ulauncher
-    firefox docker vscode
+    firefox docker vscode fishPlugins.nvm
   ];
 
   programs.fish.enable = true;

@@ -3,6 +3,9 @@
 {
   programs.fish = {
     enable = true;
+    plugins = [
+      { name = "nvm"; src = pkgs.fishPlugins.nvm; }
+    ];
     interactiveShellInit = ''
 if status is-interactive
   eval (zellij setup --generate-auto-start fish | string collect)
