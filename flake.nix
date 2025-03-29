@@ -17,6 +17,7 @@
         inherit system;
         modules = [
           ./configuration.nix
+          ./hardware-configuration.nix
           home-manager.nixosModules.home-manager
           catppuccin.nixosModules.catppuccin
           {
