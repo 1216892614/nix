@@ -17,8 +17,7 @@ set -g fish_greeting "
  /\_/\\
 ( o.o )
  > ^ <
-    " 
-    '';
+" '';
     plugins = [
       {
         name = "fisher"; src = pkgs.fetchFromGitHub {
