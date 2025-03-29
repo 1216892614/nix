@@ -71,15 +71,40 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  services.xserver.enable = true;
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
 
-    # Enable CUPS to print documents.
+  # Enable the X11 windowing system.
+  services.xserver = {
+    enable = true;
+    desktopManager = {xterm.enable=false;};
+    displayManager = {
+      defaultSession = "none+i3";
+    };
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+        i3lock
+        i3blocks
+      ];
+    };
+  };
+  #services.xserver.enable = true;
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+  programs.dconf.enable = true;
+
+  # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Configure keymap in X11
+  services.xserver = {
+    layout = "in";
+    xkbVariant = "eng";
+  };
+
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -114,13 +139,50 @@
 
   environment.variables = { GTK_IM_MODULE = "fcitx"; QT_IM_MODULE = "fcitx"; XMODIFIERS = "@im=fcitx"; };
 
+  nixpkgs.config.allowUnfree = true;
+  
   environment.systemPackages = with pkgs; [
     nushell starship yazi helix kitty fzf
     fontconfig sarasa-gothic catppuccin
-    ibus git zellij i3 feh dmenu
+    ibus git zellij i3 feh dmenu docker
+    firefox alacritty
   ];
 
   programs.firefox.enable = true;
+
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
+  services.picom = {
+    enable = true;
+    fade = true;
+    #vSync = true;
+    shadow = true;
+    fadeDelta = 4 ;
+    inactiveOpacity = 0.8;
+    activeOpacity = 1;
+    #backend = "glx";
+    settings = {
+      blur = {
+        #$method = "dual_kawase";
+        #background = true;
+        strength = 5;
+      };
+    };
+  };
 
   system.stateVersion = "24.11";
 }
