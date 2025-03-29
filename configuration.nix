@@ -27,11 +27,11 @@
   };
 
   i18n.inputMethod = {
-    type = "fcitx5";
-    fcitx5.engines = with pkgs.fcitx-engines; [ rime ];
-    fcitx5.enableRimeData= true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-rime
+    enable = true;
+    type = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      libpinyin
+      rime
     ];
   };
 
