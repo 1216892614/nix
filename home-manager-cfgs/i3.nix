@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.file.".config/i3/assets/wallpaper.png".source = ./assets/wallpaper.png;
-
   home.file.".config/i3/config".text = ''
     # 设置壁纸
     exec --no-startup-id feh --bg-scale ~/.config/i3/assets/wallpaper.png

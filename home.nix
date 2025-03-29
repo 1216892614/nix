@@ -14,6 +14,9 @@
     target = ".config/ibus/rime";
   };
 
+  
+  home.file.".config/i3/assets/wallpaper.png".source = ./assets/wallpaper.png;
+
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
 
