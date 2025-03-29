@@ -46,27 +46,6 @@
       nerd-fonts.droid-sans-mono
       nerd-fonts._0xproto
     ];
-
-    fontconfig = {
-      defaultFonts = {
-        emoji = [ "Noto Color Emoji" ];
-        monospace = [
-          "Sarasa Mono SC"
-          "Noto Sans Mono CJK SC"
-          "DejaVu Sans Mono"
-        ];
-        sansSerif = [
-          "Noto Sans CJK SC"
-          "Source Han Sans SC"
-          "DejaVu Sans"
-        ];
-        serif = [
-          "Noto Serif CJK SC"
-          "Source Han Serif SC"
-          "DejaVu Serif"
-        ];
-      };
-    };
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -103,7 +82,6 @@
   };
 
   # Enable sound with pipewire.
-  
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
