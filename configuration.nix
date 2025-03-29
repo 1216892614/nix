@@ -27,7 +27,7 @@
   };
 
   i18n.inputMethod = {
-    enabled = "ibus";
+    type = "ibus";
     ibus.engines = with pkgs.ibus-engines; [
       libpinyin
       rime
@@ -43,7 +43,8 @@
       source-code-pro
       hack-font
       jetbrains-mono
-      nerdfonts
+      nerd-fonts.droid-sans-mono
+      nerd-fonts._0xproto
     ];
 
     fontconfig = {
@@ -78,7 +79,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -108,8 +109,8 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "nerd";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "nerd";
 
   environment.variables = { GTK_IM_MODULE = "fcitx"; QT_IM_MODULE = "fcitx"; XMODIFIERS = "@im=fcitx"; };
 
