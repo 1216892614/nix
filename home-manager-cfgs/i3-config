@@ -53,8 +53,6 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec --no-startup-id ulauncher-toggle
-
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -189,10 +187,7 @@ bar {
   separator_symbol "::"
   workspace_min_width 10
   padding 5px 0 0 0
-  colors {
-    background #272e33FF
-    statusline #d3c6aa
-  }
+  position top
 }
 
 # 设置 Catppuccin 颜色
