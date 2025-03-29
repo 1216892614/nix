@@ -14,11 +14,15 @@
 
   programs.home-manager.enable = true;
 
-  programs.zellij.enable = true;
-  programs.zellij.catppuccin.enable = true;
+  programs.zellij = {
+    enable = true;
+    catppuccin.enable = true;
+  };
 
-  programs.zellij.enable = true;
-  programs.zellij.catppuccin.enable = true;
+  programs.fzf = {
+    enable = true;
+    catppuccin.enable = true;
+  };
 
   programs.starship = {
     enable = true;
