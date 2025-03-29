@@ -20,8 +20,8 @@
   programs.helix.enable = true;
 
   imports = [
-    ./modules/kitty.nix
-    ./modules/nushell.nix
+    ./home-manager-cfgs/kitty.nix
+    ./home-manager-cfgs/nushell.nix
   ];
 
   home.stateVersion = "23.11";
