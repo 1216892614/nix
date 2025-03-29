@@ -115,23 +115,12 @@
   environment.variables = { GTK_IM_MODULE = "fcitx"; QT_IM_MODULE = "fcitx"; XMODIFIERS = "@im=fcitx"; };
 
   environment.systemPackages = with pkgs; [
-    nushell starship yazi helix kitty
+    nushell starship yazi helix kitty fzf
     fontconfig nerdfonts sarasa-gothic
     ibus rime git zellij i3 catppuccin
   ];
 
   programs.firefox.enable = true;
-
-  catppuccin.flavor = "mocha";
-  catppuccin.enable = true;
-
-  catppuccin.nushell.enable = true;
-  catppuccin.yazi.enable = true;
-  catppuccin.kitty.enable = true;
-  catppuccin.starship.enable = true;
-  catppuccin.helix.enable = true;
-  catppuccin.zellij.enable = true;
-  
 
   system.stateVersion = "24.11";
 }
