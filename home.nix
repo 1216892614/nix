@@ -4,6 +4,7 @@
   home.username = "nerd";
   home.homeDirectory = "/home/nerd";
 
+  home.file.".config/i3/config".source = ./i3/config;
   home.file.".config/i3/assets/wallpaper.png".source = ./assets/wallpaper.png;
 
   home.file.".config/ibus/rime" = {

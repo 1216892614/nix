@@ -117,7 +117,7 @@
   environment.systemPackages = with pkgs; [
     nushell starship yazi helix kitty fzf
     fontconfig sarasa-gothic catppuccin
-    ibus git zellij i3 feh
+    ibus git zellij i3 feh dmenu
   ];
 
   programs.firefox.enable = true;
