@@ -232,8 +232,8 @@ set $base #1e1e2e
 set $mantle #181825
 set $crust #11111b
 
-gaps inner 11
-gaps outer 11
+gaps inner 5
+gaps outer 5
 
 smart_gaps on
 
