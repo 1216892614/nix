@@ -1,13 +1,14 @@
 { config, pkgs, ... }:
 
 {
+  home.username = "nerd";
+  home.homeDirectory = "/home/nerd";
+
+
   imports = [
     ./home-manager-cfgs/nushell.nix
     ./home-manager-cfgs/i3.nix
   ];
-
-  home.username = "nerd";
-  home.homeDirectory = "/home/nerd";
 
   home.file.".config/ibus/rime" = {
     source = ./rime;
