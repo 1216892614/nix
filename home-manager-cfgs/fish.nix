@@ -18,14 +18,5 @@ set -g fish_greeting "
 ( o.o )
  > ^ <
 " '';
-    plugins = [
-      {
-        name = "fisher"; src = pkgs.fetchFromGitHub {
-          owner = "jorgebucaran";
-          repo = "fisher";
-          rev = "1f0dc2b4970da160605638cb0f157079660d6e04";
-        };
-      }
-    ];
   };
 }
