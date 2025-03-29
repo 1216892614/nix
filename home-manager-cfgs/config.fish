@@ -3,6 +3,9 @@ if status is-interactive
 end
 
 set -x EDITOR hx
+set -x GTK_IM_MODULE "fcitx"
+set -x QT_IM_MODULE "fcitx"
+set -x XMODIFIERS "@im=fcitx"
 
 set -g fish_greeting "
  /\_/\\

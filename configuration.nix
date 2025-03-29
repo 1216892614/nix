@@ -107,8 +107,6 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "nerd";
 
-  environment.variables = { GTK_IM_MODULE = "fcitx"; QT_IM_MODULE = "fcitx"; XMODIFIERS = "@im=fcitx"; };
-
   nixpkgs.config.allowUnfree = true;
   
   environment.systemPackages = with pkgs; [
