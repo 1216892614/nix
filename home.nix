@@ -12,37 +12,38 @@
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
 
+  catppuccin.zellij.enable = true;
+  catppuccin.fzf.enable = true;
+  catppuccin.starship.enable = true;
+  catppuccin.yazi.enable = true;
+  catppuccin.helix.enable = true;
+  catppuccin.kitty.enable = true;
+
   programs.home-manager.enable = true;
 
   programs.zellij = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.fzf = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.starship = {
     enable = true;
-    catppuccin.enable = true;
     settings = { add_newline = false; };
   };
 
   programs.yazi = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.helix = {
     enable = true;
-    catppuccin.enable = true;
   };
 
   programs.kitty = {
     enable = true;
-    catppuccin.enable = true;
     settings = { hide_window_decorations = "titlebar-only"; };
   };
 
