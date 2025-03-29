@@ -7,6 +7,7 @@
   imports = [
     ./home-manager-cfgs/i3.nix
     ./home-manager-cfgs/fish.nix
+    ./home-manager-cfgs/zellij.nix
   ];
 
   home.file.".config/ibus/rime" = {
@@ -26,11 +27,6 @@
 
   programs.home-manager.enable = true;
   programs.firefox.enable = true;
-
-  programs.zellij = {
-    enable = true;
-    settings.auto_start = true;
-  };
 
   programs.fzf = {
     enable = true;
