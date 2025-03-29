@@ -30,11 +30,14 @@
     settings = { add_newline = false; };
   };
 
-  programs.yazi.enable = true;
-  programs.yazi.catppuccin.enable = true;
+  programs.yazi = {
+    enable = true;
+    catppuccin.enable = true;
+  };
 
-  programs.helix.enable = true;
-  programs.helix.catppuccin.enable = true;
+  programs.helix = {
+    enable = true;
+    catppuccin.enable = true};
 
   programs.kitty = {
     enable = true;
