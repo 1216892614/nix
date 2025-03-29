@@ -6,6 +6,7 @@
 
   imports = [
     ./home-manager-cfgs/i3.nix
+    ./home-manager-cfgs/fish.nix
   ];
 
   home.file.".config/ibus/rime" = {
