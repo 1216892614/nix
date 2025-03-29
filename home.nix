@@ -25,9 +25,11 @@
   catppuccin.fish.enable = true;
 
   programs.home-manager.enable = true;
+  programs.firefox.enable = true;
 
   programs.zellij = {
     enable = true;
+    settings.auto_start = true;
   };
 
   programs.fzf = {
