@@ -10,7 +10,7 @@
   home.homeDirectory = "/home/nerd";
 
   home.file.".config/ibus/rime" = {
-    source = rime;
+    source = ./rime;
     target = ".config/ibus/rime";
   };
 
