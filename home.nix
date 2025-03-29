@@ -37,7 +37,8 @@
 
   programs.helix = {
     enable = true;
-    catppuccin.enable = true};
+    catppuccin.enable = true;
+  };
 
   programs.kitty = {
     enable = true;
