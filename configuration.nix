@@ -107,11 +107,7 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "nerd";
 
-  services.docker = {
-    enable = true;
-    autoPrune.enable = true; # 可选：自动清理未使用的镜像和容器
-    logDriver = "json-file";  # 可选：配置日志存储方式
-  };
+  virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   
