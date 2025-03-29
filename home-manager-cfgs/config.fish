@@ -3,3 +3,9 @@ if status is-interactive
 end
 
 set -x EDITOR hx
+
+set -g fish_greeting "
+ /\_/\\
+( o.o )
+ > ^ <
+" 
