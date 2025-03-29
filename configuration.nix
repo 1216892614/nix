@@ -27,8 +27,7 @@
   };
 
   i18n.inputMethod = {
-    enabled = true;
-    type = "ibus";
+    enabled = "ibus";
     ibus.engines = with pkgs.ibus-engines; [
       libpinyin
       rime
@@ -102,7 +101,7 @@
     isNormalUser = true;
     description = "nerd";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
     packages = with pkgs; [
     #  thunderbird
     ];
