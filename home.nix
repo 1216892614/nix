@@ -4,9 +4,7 @@
   home.username = "nerd";
   home.homeDirectory = "/home/nerd";
 
-
   imports = [
-    ./home-manager-cfgs/nushell.nix
     ./home-manager-cfgs/i3.nix
   ];
 
@@ -20,10 +18,10 @@
 
   catppuccin.zellij.enable = true;
   catppuccin.fzf.enable = true;
-  catppuccin.starship.enable = true;
   catppuccin.yazi.enable = true;
   catppuccin.helix.enable = true;
   catppuccin.kitty.enable = true;
+  catppuccin.fish.enable = true;
 
   programs.home-manager.enable = true;
 
@@ -33,11 +31,6 @@
 
   programs.fzf = {
     enable = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    settings = { add_newline = false; };
   };
 
   programs.yazi = {

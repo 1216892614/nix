@@ -100,7 +100,7 @@
     isNormalUser = true;
     description = "nerd";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -115,7 +115,7 @@
   nixpkgs.config.allowUnfree = true;
   
   environment.systemPackages = with pkgs; [
-    nushell starship yazi helix kitty fzf
+    fish yazi helix kitty fzf
     fontconfig sarasa-gothic catppuccin
     ibus git zellij i3 feh ulauncher
     firefox docker
