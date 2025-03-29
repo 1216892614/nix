@@ -114,9 +114,13 @@
     fontconfig sarasa-gothic catppuccin
     ibus git zellij i3 feh ulauncher
     firefox docker vscode fishPlugins.nvm
+    jetbrains-toolbox snipaste
+    clash-verge-rev ibus-engines.rime
   ];
 
   programs.fish.enable = true;
+  programs.snipaste.enable = true;
+  programs.docker.enable = true;
   programs.firefox.enable = true;
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
