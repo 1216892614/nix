@@ -188,6 +188,19 @@ bar {
   workspace_min_width 10
   padding 5px 0 0 0
   position top
+
+  colors {
+    background         $base
+    statusline         $text
+    focused_statusline $text
+    focused_separator  $base
+
+    # target           border bg        text
+    focused_workspace  $base  $mauve    $crust
+    active_workspace   $base  $surface2 $text
+    inactive_workspace $base  $base     $text
+    urgent_workspace   $base  $red      $crust
+  }
 }
 
 # 设置 Catppuccin 颜色
