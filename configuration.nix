@@ -116,8 +116,8 @@
 
   environment.systemPackages = with pkgs; [
     nushell starship yazi helix kitty fzf
-    fontconfig nerdfonts sarasa-gothic
-    ibus rime git zellij i3 catppuccin
+    fontconfig sarasa-gothic catppuccin
+    ibus rime git zellij i3
   ];
 
   programs.firefox.enable = true;
