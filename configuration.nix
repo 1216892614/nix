@@ -122,8 +122,8 @@
   environment.systemPackages = with pkgs; [
     nushell starship yazi helix kitty fzf
     fontconfig sarasa-gothic catppuccin
-    ibus git zellij i3 feh dmenu docker
-    firefox alacritty
+    ibus git zellij i3 feh ulauncher
+    firefox docker
   ];
 
   programs.firefox.enable = true;
