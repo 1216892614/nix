@@ -1,14 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./home-manager-cfgs/nushell.nix
+    ./home-manager-cfgs/i3.nix
+  ];
+
   home.username = "nerd";
   home.homeDirectory = "/home/nerd";
 
-  home.file.".config/i3/config".source = ./i3/config;
-  home.file.".config/i3/assets/wallpaper.png".source = ./assets/wallpaper.png;
-
   home.file.".config/ibus/rime" = {
-    source = ./rime;
+    source = rime;
     target = ".config/ibus/rime";
   };
 
@@ -49,12 +51,6 @@
     enable = true;
     settings = { hide_window_decorations = "titlebar-only"; };
   };
-
-  imports = [
-    ./home-manager-cfgs/nushell.nix
-    ./home-manager-cfgs/i3.nix
-  ];
-
 
   home.stateVersion = "23.11";
 }
