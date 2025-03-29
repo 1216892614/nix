@@ -113,7 +113,7 @@
     fish yazi helix kitty fzf
     fontconfig sarasa-gothic catppuccin
     ibus git zellij i3 feh ulauncher
-    firefox docker
+    firefox docker fishPlugins.nvm
   ];
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
