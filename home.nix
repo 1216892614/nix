@@ -19,8 +19,12 @@
   programs.yazi.enable = true;
   programs.helix.enable = true;
 
+    programs.kitty = {
+    enable = true;
+    settings = { hide_window_decorations = "titlebar-only"; };
+  };
+
   imports = [
-    ./home-manager-cfgs/kitty.nix
     ./home-manager-cfgs/nushell.nix
   ];
 
