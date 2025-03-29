@@ -4,10 +4,6 @@
   programs.nushell = {
     enable = true;
 
-    users.users.myuser = {
-      shell = pkgs.nushell;
-    };
-
     configFile.text = ''
       source ~/.config/nushell/config.nu
 

@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "myuser";
-  home.homeDirectory = "/home/myuser";
+  home.username = "nerd";
+  home.homeDirectory = "/home/nerd";
 
   home.file.".config/ibus/rime" = {
     source = ./rime;

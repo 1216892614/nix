@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-    imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -107,6 +102,7 @@
     isNormalUser = true;
     description = "nerd";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -125,11 +121,6 @@
   ];
 
   programs.firefox.enable = true;
-
-  users.users.myuser = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
 
   system.stateVersion = "24.11";
 }
