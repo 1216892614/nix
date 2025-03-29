@@ -47,6 +47,20 @@
     settings = { hide_window_decorations = "titlebar-only"; };
   };
 
+  programs.i3 = {
+    enable = true;
+    settings = { hide_window_decorations = "titlebar-only"; };
+    windowManager = {
+      focusedBorderColor = "#ff0000"; # 设置窗口聚焦时的边框颜色
+      unfocusedBorderColor = "#ffffff"; # 设置窗口未聚焦时的边框颜色
+      activeColor = "#000000"; # 设置窗口背景色
+    };
+    config = ''
+      # 设置壁纸
+      exec --no-startup-id feh --bg-scale /home/nerd/.config/i3/assets/wallpaper.png
+    '';
+  };
+
   imports = [
     ./home-manager-cfgs/nushell.nix
   ];
