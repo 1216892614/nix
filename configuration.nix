@@ -1,19 +1,35 @@
 { config, pkgs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
 
-  services.xserver.enable = true;
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  environment.variables = { GTK_IM_MODULE = "fcitx"; QT_IM_MODULE = "fcitx"; XMODIFIERS = "@im=fcitx"; };
+  networking.hostName = "nixos"; # Define your hostname.
+  networking.networkmanager.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    nushell starship yazi helix kitty
-    fontconfig nerdfonts sarasa-gothic
-    ibus rime git zellij
-  ];
+  # Set your time zone.
+  time.timeZone = "Asia/Shanghai";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "zh_CN.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "zh_CN.UTF-8";
+    LC_IDENTIFICATION = "zh_CN.UTF-8";
+    LC_MEASUREMENT = "zh_CN.UTF-8";
+    LC_MONETARY = "zh_CN.UTF-8";
+    LC_NAME = "zh_CN.UTF-8";
+    LC_NUMERIC = "zh_CN.UTF-8";
+    LC_PAPER = "zh_CN.UTF-8";
+    LC_TELEPHONE = "zh_CN.UTF-8";
+    LC_TIME = "zh_CN.UTF-8";
+  };
 
   i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.inputMethod = {
@@ -59,10 +75,62 @@
     };
   };
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  services.xserver.enable = true;
+  services.xserver.windowManager.i3.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+
+    # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.nerd = {
+    isNormalUser = true;
+    description = "nerd";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+    #  thunderbird
+    ];
+  };
+
+  # Enable automatic login for the user.
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "nerd";
+
+  environment.variables = { GTK_IM_MODULE = "fcitx"; QT_IM_MODULE = "fcitx"; XMODIFIERS = "@im=fcitx"; };
+
+  environment.systemPackages = with pkgs; [
+    nushell starship yazi helix kitty
+    fontconfig nerdfonts sarasa-gothic
+    ibus rime git zellij i3
+  ];
+
+  programs.firefox.enable = true;
+
   users.users.myuser = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 }
