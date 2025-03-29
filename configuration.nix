@@ -108,9 +108,9 @@
   services.displayManager.autoLogin.user = "nerd";
 
   services.docker = {
-  enable = true;
-  autoPrune.enable = true; # 可选：自动清理未使用的镜像和容器
-  logDriver = "json-file";  # 可选：配置日志存储方式
+    enable = true;
+    autoPrune.enable = true; # 可选：自动清理未使用的镜像和容器
+    logDriver = "json-file";  # 可选：配置日志存储方式
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -125,7 +125,6 @@
   ];
 
   programs.fish.enable = true;
-  programs.snipaste.enable = true;
   programs.firefox.enable = true;
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
